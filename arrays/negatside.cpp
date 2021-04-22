@@ -4,7 +4,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void negatside(int arr[],int n){
+int negatside(int arr[],int n){
     int l=0;
     int r=n-1;
 
@@ -13,12 +13,16 @@ void negatside(int arr[],int n){
             l++;
         }
         else if(arr[l]>0 && arr[r]>0 ){
-            r++;
+            r--;
         }
         else if(arr[l]>0 && arr[r]<0 ){
             int temp = arr[l];
             arr[l] = arr[r];
             arr[r] = temp;
+            l++;
+            r--;
+        }
+        else{
             l++;
             r--;
         }
